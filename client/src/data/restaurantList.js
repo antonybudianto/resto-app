@@ -7,7 +7,7 @@ export const data = [
     slug: 'duck-king',
     location: {
       latitude: -6.2237027,
-      longitude: 106.8203883,
+      longitude: 106.8209883,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.7'
@@ -21,8 +21,8 @@ export const data = [
     name: 'Holycow',
     slug: 'holycow',
     location: {
-      latitude: -6.2237021,
-      longitude: 106.8203853,
+      latitude: -6.2237921,
+      longitude: 106.8213853,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.12'
@@ -66,7 +66,7 @@ export const data = [
     name: 'Yoshinoya',
     slug: 'yoshinoya',
     location: {
-      latitude: -6.2235921,
+      latitude: -6.2255921,
       longitude: 106.8203883,
       city: 'Jakarta',
       countryId: 1,

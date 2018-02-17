@@ -1,6 +1,6 @@
 import React from "react"
 import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
 
 const GMAP_API_KEY = 'AIzaSyAdycHBxDQPe40ta91OW0nzLjGp_0ytejw'
 
@@ -22,11 +22,16 @@ const RestaurantMapView = compose(
     {
       props.data.map((resto, i) => (
         <Marker key={i}
+          onClick={props.onToggleOpen}
           icon={{
             url: './marker.png',
             scaledSize: {width: 30, height: 30}
           }}
-          position={{ lat: resto.location.latitude, lng: resto.location.longitude }} />
+          position={{ lat: resto.location.latitude, lng: resto.location.longitude }}>
+          <InfoWindow>
+            <div>{resto.name}</div>
+          </InfoWindow>
+        </Marker>
       ))
     }
   </GoogleMap>
