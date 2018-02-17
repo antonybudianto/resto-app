@@ -63,16 +63,16 @@ class RestaurantPage extends Component {
     return (
       <div className="container mt-3">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-5 mt-3">
             <h1>{resto.name}</h1>
             <div>{resto.location.address}</div>
             <div>Rating: {resto.rating}</div>
           </div>
-          <div className="col-md-6 d-flex justify-content-end">
+          <div className="col-md-7 mt-3 d-flex justify-content-around">
             <form className="form-inline" onSubmit={this.handleReservation} noValidate>
               <select value={this.state.peopleCount}
                 onChange={this.handlePeopleCountChange}
-                className="form-control mr-2">
+                className="form-control mr-2 mt-1">
                 {
                   TOTAL_PEOPLE_LIST.map((_, i) => (
                     <option key={i}
@@ -82,7 +82,7 @@ class RestaurantPage extends Component {
               </select>
               <DatePicker
                 readOnly
-                className="form-control"
+                className="form-control mt-1"
                 minDate={moment()}
                 selected={this.state.date}
                 onChange={this.handleDateChange}
@@ -93,7 +93,7 @@ class RestaurantPage extends Component {
                 timeCaption="time"
               />
               <button type="submit"
-                className="btn btn-primary ml-2">Book now</button>
+                className="btn btn-primary ml-2 mt-1">Book now</button>
             </form>
           </div>
         </div>
