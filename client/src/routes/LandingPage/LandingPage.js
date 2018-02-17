@@ -1,27 +1,55 @@
 import React, { Component } from 'react';
 
-import RestaurantListSection from './sections/RestaurantListSection'
-import RestaurantMapView from './sections/RestaurantMapView'
+import RestaurantListSection from './sections/RestaurantListSection';
+import RestaurantMapView from './sections/RestaurantMapView';
 
 import './LandingPage.css';
+
+const geoSupport = !'geolocation' in navigator;
 
 class LandingPage extends Component {
   state = {
     lat: 0,
     lng: 0,
     posReady: false
+  };
+
+  constructor (props) {
+    super(props);
+
+    this.renderMap = this.renderMap.bind(this);
   }
 
   componentDidMount () {
-    navigator.geolocation.getCurrentPosition(pos => {
-      const coords = pos.coords
-      this.setState({
-        lat: coords.latitude,
-        lng: coords.longitude,
-        posReady: true
+    if (!geoSupport) {
+    } else {
+      navigator.geolocation.getCurrentPosition(pos => {
+        const coords = pos.coords;
+        this.setState({
+          geoSupport: true,
+          lat: coords.latitude,
+          lng: coords.longitude,
+          posReady: true
+        });
       });
-      console.log('ok', coords)
-    });
+    }
+  }
+
+  renderMap () {
+    if (this.state.posReady) {
+      return (
+        <div>
+          <RestaurantMapView lat={this.state.lat} lng={this.state.lng} isMarkerShown />
+        </div>
+      );
+    } else {
+      return (
+        <div className="mb-5 py-5 bg-dark text-light">
+          <i className="fa fa-spin fa-spinner" />
+          Looking your nearby restaurant, just some seconds!...
+        </div>
+      );
+    }
   }
 
   render () {
@@ -34,18 +62,13 @@ class LandingPage extends Component {
           </div>
         </section>
           {
-            this.state.posReady ? (
-              <div>
-                <RestaurantMapView lat={this.state.lat} lng={this.state.lng}
-                  isMarkerShown />
-                <RestaurantListSection />
-              </div>
-            ) : (
+            !geoSupport ? (
               <div className="mb-5 py-5 bg-dark text-light">
-                <i className="fa fa-spin fa-spinner"></i> Looking your nearby restaurant, just some seconds!...
+                Geolocation not supported
               </div>
-            )
+            ) : this.renderMap()
           }
+          <RestaurantListSection />
       </main>
     );
   }
