@@ -10,19 +10,293 @@ const geoSupport = 'geolocation' in navigator;
 // TODO: mock data. will be replaced with API
 const dataWithGeo = [
   {
-    name: 'KFC Kuningan',
-    address: 'Jl. Guru Mughni No.12'
+    id: 0,
+    name: 'Duck King',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.7'
+    },
+    rating: 5,
+    cuisineType: 'Chinese'
   },
   {
-    name: 'Pizza Hut',
-    address: 'Jl. Guru Mughni No.14'
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
   }
 ];
 
 const dataWithoutGeo = [
   {
-    name: 'KFC Kuningan',
-    address: 'Jl. Guru Mughni No.12'
+    id: 0,
+    name: 'Duck King',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.7'
+    },
+    rating: 5,
+    cuisineType: 'Chinese'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
+  },
+  {
+    id: 1,
+    name: 'Holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  },
+  {
+    id: 2,
+    name: 'KFC',
+    location: {
+      latitude: -6.0044,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.3'
+    },
+    rating: 4.2,
+    cuisineType: 'Western'
   }
 ];
 
@@ -84,7 +358,7 @@ class LandingPage extends Component {
       );
     } else {
       return (
-        <div className="mb-5 py-5 bg-dark text-light">
+        <div className="mb-5 py-5 bg-dark text-light text-center">
           <i className="fa fa-spin fa-spinner" /> Looking your nearby restaurant, just some seconds!...
         </div>
       );
@@ -100,18 +374,27 @@ class LandingPage extends Component {
             <p className="lead text-muted">Book your nearest restaurant instantly</p>
           </div>
         </section>
+        <div className="row">
           {
-            !geoSupport || !this.state.allowGetLocation ? (
-              <div className="mb-5 py-5 bg-dark text-light">
-                Geolocation not supported
+            !this.state.allowGetLocation ? (
+              <div className="col-md-12 mb-5 py-5 bg-dark text-light text-center">
+                We can find your nearest restaurants around you if you enable the location service
               </div>
-            ) : this.renderMap()
+            ) : (
+              <div className="col-md-12">
+                {geoSupport && this.renderMap()}
+              </div>
+            )
           }
           {
             this.state.dataReady && (
-              <RestaurantListSection data={this.state.data} />
+              <div className="col-md-12">
+                <RestaurantListSection data={this.state.data} />
+              </div>
             )
           }
+        </div>
+
       </main>
     );
   }
