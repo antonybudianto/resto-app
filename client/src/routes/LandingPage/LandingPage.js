@@ -7,11 +7,32 @@ import './LandingPage.css';
 
 const geoSupport = 'geolocation' in navigator;
 
+// TODO: mock data. will be replaced with API
+const dataWithGeo = [
+  {
+    name: 'KFC Kuningan',
+    address: 'Jl. Guru Mughni No.12'
+  },
+  {
+    name: 'Pizza Hut',
+    address: 'Jl. Guru Mughni No.14'
+  }
+];
+
+const dataWithoutGeo = [
+  {
+    name: 'KFC Kuningan',
+    address: 'Jl. Guru Mughni No.12'
+  }
+];
+
 class LandingPage extends Component {
   state = {
+    data: [],
     lat: 0,
     lng: 0,
     allowGetLocation: true,
+    dataReady: false,
     posReady: false
   };
 
@@ -23,6 +44,16 @@ class LandingPage extends Component {
 
   componentDidMount () {
     if (!geoSupport) {
+      /**
+       * If geo isn't supported, we can still use 3rd party API to get the coords (e.g. https://ip-api.io/)
+       * but we cannot rely on them completely, thus need to handle the unknown location.
+       * We can just fetch top-1 + top-10 restaurant data without the coords, and still allow
+       * users to filter by name and address
+       **/
+      this.setState({
+        dataReady: true,
+        data: dataWithoutGeo
+      });
     } else {
       navigator.geolocation.getCurrentPosition(pos => {
         const coords = pos.coords;
@@ -30,10 +61,14 @@ class LandingPage extends Component {
           geoSupport: true,
           lat: coords.latitude,
           lng: coords.longitude,
-          posReady: true
+          posReady: true,
+          dataReady: true,
+          data: dataWithGeo
         });
       }, () => {
         this.setState({
+          dataReady: true,
+          data: dataWithoutGeo,
           allowGetLocation: false
         });
       });
@@ -72,7 +107,11 @@ class LandingPage extends Component {
               </div>
             ) : this.renderMap()
           }
-          <RestaurantListSection />
+          {
+            this.state.dataReady && (
+              <RestaurantListSection data={this.state.data} />
+            )
+          }
       </main>
     );
   }
