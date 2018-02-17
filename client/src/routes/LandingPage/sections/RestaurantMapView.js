@@ -18,7 +18,17 @@ const RestaurantMapView = compose(
     defaultZoom={16}
     defaultCenter={{ lat: props.lat, lng: props.lng }}
   >
-    {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng }} onClick={props.onMarkerClick} />}
+    {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng }} />}
+    {
+      props.data.map((resto, i) => (
+        <Marker key={i}
+          icon={{
+            url: './marker.png',
+            scaledSize: {width: 30, height: 30}
+          }}
+          position={{ lat: resto.location.latitude, lng: resto.location.longitude }} />
+      ))
+    }
   </GoogleMap>
 ))
 

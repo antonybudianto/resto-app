@@ -6,8 +6,8 @@ export const data = [
     name: 'Duck King',
     slug: 'duck-king',
     location: {
-      latitude: -6.1744,
-      longitude: 102.8294,
+      latitude: -6.2237027,
+      longitude: 106.8203883,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.7'
@@ -21,8 +21,8 @@ export const data = [
     name: 'Holycow',
     slug: 'holycow',
     location: {
-      latitude: -6.1744,
-      longitude: 102.8294,
+      latitude: -6.2237021,
+      longitude: 106.8203853,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.12'
@@ -36,8 +36,8 @@ export const data = [
     name: 'KFC',
     slug: 'kfc',
     location: {
-      latitude: -6.0044,
-      longitude: 102.8294,
+      latitude: -6.2236921,
+      longitude: 106.8101853,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.3'
@@ -51,8 +51,8 @@ export const data = [
     name: 'Burger King',
     slug: 'burger-king',
     location: {
-      latitude: -6.1744,
-      longitude: 102.8294,
+      latitude: -6.2235921,
+      longitude: 106.8301853,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.12'
@@ -66,8 +66,8 @@ export const data = [
     name: 'Yoshinoya',
     slug: 'yoshinoya',
     location: {
-      latitude: -6.0044,
-      longitude: 102.8294,
+      latitude: -6.2235921,
+      longitude: 106.8203883,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.3'
@@ -81,8 +81,8 @@ export const data = [
     name: 'Loving Hut',
     slug: 'loving-hut',
     location: {
-      latitude: -6.1744,
-      longitude: 102.8294,
+      latitude: -6.2235921,
+      longitude: 106.8300996,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.12'
@@ -96,8 +96,8 @@ export const data = [
     name: 'La Brasserie Restaurant',
     slug: 'la-brasserie',
     location: {
-      latitude: -6.0044,
-      longitude: 102.8294,
+      latitude: -6.2235321,
+      longitude: 106.8102653,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.3'
@@ -111,8 +111,8 @@ export const data = [
     name: 'SATOO',
     slug: 'satoo',
     location: {
-      latitude: -6.1744,
-      longitude: 102.8294,
+      latitude: -6.2235921,
+      longitude: 106.8072653,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.12'
@@ -126,8 +126,8 @@ export const data = [
     name: 'Ninety Nine',
     slug: 'ninety-nine',
     location: {
-      latitude: -6.0044,
-      longitude: 102.8294,
+      latitude: -6.2215921,
+      longitude: 106.8071653,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.3'
@@ -141,8 +141,8 @@ export const data = [
     name: 'Skye',
     slug: 'skye',
     location: {
-      latitude: -6.1744,
-      longitude: 102.8294,
+      latitude: -6.2215921,
+      longitude: 106.8079653,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.12'
@@ -156,8 +156,8 @@ export const data = [
     name: 'Meradelima',
     slug: 'meradelima',
     location: {
-      latitude: -6.0044,
-      longitude: 102.8294,
+      latitude: -6.2215921,
+      longitude: 106.8070953,
       city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.3'

@@ -53,6 +53,8 @@ class LandingPage extends Component {
           data,
           allowGetLocation: false
         });
+      }, {
+        maximumAge: 60000
       });
     }
   }
@@ -61,7 +63,9 @@ class LandingPage extends Component {
     if (this.state.posReady) {
       return (
         <div>
-          <RestaurantMapView lat={this.state.lat} lng={this.state.lng} isMarkerShown />
+          <RestaurantMapView
+            data={this.state.data}
+            lat={this.state.lat} lng={this.state.lng} isMarkerShown />
         </div>
       );
     } else {
