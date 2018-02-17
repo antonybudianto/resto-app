@@ -36,7 +36,8 @@ class LandingPage extends Component {
           {
             this.state.posReady ? (
               <div>
-                <RestaurantMapView lat={this.state.lat} lng={this.state.lng} />
+                <RestaurantMapView lat={this.state.lat} lng={this.state.lng}
+                  isMarkerShown />
                 <RestaurantListSection />
               </div>
             ) : (
