@@ -23,13 +23,14 @@ class RestaurantPage extends Component {
     this.handlePeopleCountChange = this.handlePeopleCountChange.bind(this);
   }
 
-  handleReservation (e) {
+  handleReservation (e, resto) {
     e.preventDefault();
 
     // TODO: do POST fetch to API server with following request body
     const data = {
       peopleCount: this.state.peopleCount,
-      date: this.state.date.valueOf()
+      date: this.state.date.valueOf(),
+      restaurantId: resto.id
     };
     console.log(data)
   }
@@ -69,7 +70,8 @@ class RestaurantPage extends Component {
             <div>Rating: {resto.rating}</div>
           </div>
           <div className="col-md-7 mt-3 d-flex justify-content-around">
-            <form className="form-inline" onSubmit={this.handleReservation} noValidate>
+            <form className="form-inline"
+              onSubmit={(e) => this.handleReservation(e, resto)} noValidate>
               <select value={this.state.peopleCount}
                 onChange={this.handlePeopleCountChange}
                 className="form-control mr-2 mt-1">
