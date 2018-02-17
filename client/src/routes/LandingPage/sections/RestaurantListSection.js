@@ -13,9 +13,10 @@ const RestaurantListSection = ({ data }) => (
                   <div className="col-md-12">
                     <h3>Featuring</h3>
                   </div>
-                  <div className="col-md-12" key={i}>
+                  <div className="col-md-12">
                     <div className="card card-row mb-4 box-shadow">
-                      <img className="card-img-left" alt="Card" src="http://via.placeholder.com/350x150" />
+                      <img className="img-fluid landing-card-img landing-card-img-main"
+                        alt="Card" src={resto.imgUrl} />
                       <div className="card-body">
                         <h5>{resto.name}</h5>
                         <p className="card-text">{resto.location.address}</p>
@@ -43,9 +44,10 @@ const RestaurantListSection = ({ data }) => (
                     </div>
                   )
                 }
-                <div className="col-md-4" key={i}>
+                <div className="col-md-4">
                   <div className="card mb-4 box-shadow">
-                    <img className="card-img-top" alt="Card" src="http://via.placeholder.com/350x150" />
+                    <img className="img-fluid landing-card-img card-img-top"
+                      alt="Card" src={resto.imgUrl} />
                     <div className="card-body">
                       <h5>{resto.name}</h5>
                       <p className="card-text">{resto.location.address}</p>

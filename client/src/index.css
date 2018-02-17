@@ -8,9 +8,12 @@ body {
   flex-direction: row;
 }
 
-.card-img-left {
-  width: 40%;
+@media (max-width: 780px) {
+  .card-row {
+    flex-direction: column;
+  }
 }
+
 
 ul {
   -webkit-padding-start: 0;
