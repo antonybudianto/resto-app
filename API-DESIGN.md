@@ -31,6 +31,30 @@ top = get the top 11 restaurants (need 1 for the top 1), ordered by rating
 }
 ```
 
+### Get restaurant by slug
+```
+**GET** /api/restaurants/:slug
+
+// Response
+// HTTP 200
+{
+  data: {
+    id: '1',
+    name: 'Holycow',
+    slug: 'holycow',
+    location: {
+      latitude: -6.1744,
+      longitude: 102.8294,
+      city: 'Jakarta',
+      countryId: 1,
+      address: 'Jl. Guru Mughni No.12'
+    },
+    rating: 5,
+    cuisineType: 'Western'
+  }
+}
+```
+
 ### Book a table
 ```
 **POST** /api/restaurants/book

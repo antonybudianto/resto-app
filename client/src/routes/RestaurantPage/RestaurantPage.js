@@ -48,6 +48,7 @@ class RestaurantPage extends Component {
   }
 
   render () {
+    // TODO: should do fetch restaurant by slug
     const slug = this.props.match.params.slug;
     const resto = data.find(restaurant => restaurant.slug === slug);
     if (!resto) {
