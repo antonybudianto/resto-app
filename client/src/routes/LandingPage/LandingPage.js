@@ -5,12 +5,13 @@ import RestaurantMapView from './sections/RestaurantMapView';
 
 import './LandingPage.css';
 
-const geoSupport = !'geolocation' in navigator;
+const geoSupport = 'geolocation' in navigator;
 
 class LandingPage extends Component {
   state = {
     lat: 0,
     lng: 0,
+    allowGetLocation: true,
     posReady: false
   };
 
@@ -31,6 +32,10 @@ class LandingPage extends Component {
           lng: coords.longitude,
           posReady: true
         });
+      }, () => {
+        this.setState({
+          allowGetLocation: false
+        });
       });
     }
   }
@@ -45,8 +50,7 @@ class LandingPage extends Component {
     } else {
       return (
         <div className="mb-5 py-5 bg-dark text-light">
-          <i className="fa fa-spin fa-spinner" />
-          Looking your nearby restaurant, just some seconds!...
+          <i className="fa fa-spin fa-spinner" /> Looking your nearby restaurant, just some seconds!...
         </div>
       );
     }
@@ -62,7 +66,7 @@ class LandingPage extends Component {
           </div>
         </section>
           {
-            !geoSupport ? (
+            !geoSupport || !this.state.allowGetLocation ? (
               <div className="mb-5 py-5 bg-dark text-light">
                 Geolocation not supported
               </div>
