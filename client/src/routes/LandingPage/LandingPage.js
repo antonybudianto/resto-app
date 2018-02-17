@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import RestaurantListSection from './sections/RestaurantListSection';
 import RestaurantMapView from './sections/RestaurantMapView';
-import { dataWithGeo, dataWithoutGeo } from '../../data/restaurantList';
+import { data } from '../../data/restaurantList';
 
 import './LandingPage.css';
 
@@ -34,7 +34,7 @@ class LandingPage extends Component {
        **/
       this.setState({
         dataReady: true,
-        data: dataWithoutGeo
+        data
       });
     } else {
       navigator.geolocation.getCurrentPosition(pos => {
@@ -45,12 +45,12 @@ class LandingPage extends Component {
           lng: coords.longitude,
           posReady: true,
           dataReady: true,
-          data: dataWithGeo
+          data
         });
       }, () => {
         this.setState({
           dataReady: true,
-          data: dataWithoutGeo,
+          data,
           allowGetLocation: false
         });
       });
