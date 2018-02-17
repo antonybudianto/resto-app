@@ -15,6 +15,7 @@ top = get the top 11 restaurants (need 1 for the top 1), ordered by rating
     {
       id: '1',
       name: 'Holycow',
+      slug: 'holycow',
       location: {
         latitude: -6.1744,
         longitude: 102.8294,

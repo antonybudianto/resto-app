@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LandingPage from './routes/LandingPage';
+import RestaurantPage from './routes/RestaurantPage';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path="/" exact component={LandingPage} />
+          <Route path="/restaurant/:slug" component={RestaurantPage} />
         </Switch>
         <Footer />
       </div>

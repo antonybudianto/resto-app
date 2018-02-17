@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
@@ -22,9 +23,9 @@ const Header = () => (
     </div>
     <div className="navbar navbar-dark bg-dark box-shadow">
       <div className="container d-flex justify-content-between">
-        <a href="/" className="navbar-brand d-flex align-items-center">
+        <Link to="/" className="navbar-brand d-flex align-items-center">
           <strong>RestoHub</strong>
-        </a>
+        </Link>
       </div>
     </div>
   </header>
