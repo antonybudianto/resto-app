@@ -11,3 +11,7 @@ body {
 .card-img-left {
   width: 40%;
 }
+
+ul {
+  -webkit-padding-start: 0;
+}

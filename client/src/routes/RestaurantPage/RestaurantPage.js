@@ -1,10 +1,49 @@
 import React, { Component } from 'react';
-import { data } from '../../data/restaurantList'
+import DatePicker from 'react-datepicker';
+import { range } from 'lodash';
+import moment from 'moment';
+
+import { data } from '../../data/restaurantList';
+
+const MIN_PEOPLE = 2;
+const MAX_PEOPLE = 10;
+const TOTAL_PEOPLE_LIST = range(MIN_PEOPLE, MAX_PEOPLE + 1);
 
 class RestaurantPage extends Component {
+  constructor (props) {
+    super(props);
 
-  componentDidMount () {
+    this.state = {
+      date: moment(),
+      peopleCount: 2
+    };
 
+    this.handleReservation = this.handleReservation.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handlePeopleCountChange = this.handlePeopleCountChange.bind(this);
+  }
+
+  handleReservation (e) {
+    e.preventDefault();
+
+    // TODO: do POST fetch to API server with following request body
+    const data = {
+      peopleCount: this.state.peopleCount,
+      date: this.state.date.valueOf()
+    };
+    console.log(data)
+  }
+
+  handlePeopleCountChange (e) {
+    this.setState({
+      peopleCount: e.target.value
+    });
+  }
+
+  handleDateChange (date) {
+    this.setState({
+      date
+    })
   }
 
   render () {
@@ -24,11 +63,38 @@ class RestaurantPage extends Component {
     return (
       <div className="container mt-3">
         <div className="row">
-          <div className="col-md-4">
-            Resto
+          <div className="col-md-6">
+            <h1>{resto.name}</h1>
+            <div>{resto.location.address}</div>
+            <div>Rating: {resto.rating}</div>
           </div>
-          <div className="col-md-8">
-            {resto.name}
+          <div className="col-md-6 d-flex justify-content-end">
+            <form className="form-inline" onSubmit={this.handleReservation} noValidate>
+              <select value={this.state.peopleCount}
+                onChange={this.handlePeopleCountChange}
+                className="form-control mr-2">
+                {
+                  TOTAL_PEOPLE_LIST.map((_, i) => (
+                    <option key={i}
+                      value={MIN_PEOPLE + i}>{MIN_PEOPLE + i} people</option>
+                  ))
+                }
+              </select>
+              <DatePicker
+                readOnly
+                className="form-control"
+                minDate={moment()}
+                selected={this.state.date}
+                onChange={this.handleDateChange}
+                showTimeSelect
+                timeFormat="HH:mm"
+                timeIntervals={30}
+                dateFormat="LLL"
+                timeCaption="time"
+              />
+              <button type="submit"
+                className="btn btn-primary ml-2">Book now</button>
+            </form>
           </div>
         </div>
       </div>
