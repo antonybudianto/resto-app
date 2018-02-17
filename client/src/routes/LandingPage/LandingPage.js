@@ -1,6 +1,7 @@
 import React from 'react';
 
 import RestaurantListSection from './sections/RestaurantListSection'
+import RestaurantMapView from './sections/RestaurantMapView'
 
 import './LandingPage.css';
 
@@ -12,7 +13,9 @@ const LandingPage = () => (
         <p className="lead text-muted">Book your nearest restaurant instantly</p>
       </div>
     </section>
-
+    <div>
+      <RestaurantMapView />
+    </div>
     <RestaurantListSection />
   </main>
 );
