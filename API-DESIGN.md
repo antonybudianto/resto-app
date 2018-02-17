@@ -35,6 +35,9 @@ top = get the top 11 restaurants (need 1 for the top 1), ordered by rating
 ```
 **POST** /api/restaurants/book
 
+// Header
+Send the credentials with cookie
+
 // Request payload
 {
   peopleCount: 2,
