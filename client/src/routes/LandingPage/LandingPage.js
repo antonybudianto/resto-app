@@ -1,5 +1,7 @@
 import React from 'react';
 
+import RestaurantListSection from './sections/RestaurantListSection'
+
 import './LandingPage.css';
 
 const LandingPage = () => (
@@ -11,6 +13,7 @@ const LandingPage = () => (
       </div>
     </section>
 
+    <RestaurantListSection />
   </main>
 );
 
