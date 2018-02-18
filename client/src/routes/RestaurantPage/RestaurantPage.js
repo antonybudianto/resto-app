@@ -67,7 +67,7 @@ class RestaurantPage extends Component {
       <div className="container mt-3">
         <div className="row">
           <div className="col-md-2 mt-3">
-            <img class="img-fluid img-thumbnail" src={resto.imgUrl} alt={resto.name}/>
+            <img className="img-fluid img-thumbnail" src={resto.imgUrl} alt={resto.name}/>
           </div>
           <div className="col-md-3 mt-3">
             <h1>{resto.name}</h1>
