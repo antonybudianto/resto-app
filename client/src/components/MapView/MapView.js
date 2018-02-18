@@ -1,8 +1,13 @@
-import React from "react"
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import React from 'react';
+import { compose, withProps } from 'recompose';
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from 'react-google-maps';
 
-const GMAP_API_KEY = 'AIzaSyAdycHBxDQPe40ta91OW0nzLjGp_0ytejw'
+const GMAP_API_KEY = 'AIzaSyAdycHBxDQPe40ta91OW0nzLjGp_0ytejw';
 
 const MapView = compose(
   withProps({
@@ -13,12 +18,14 @@ const MapView = compose(
   }),
   withScriptjs,
   withGoogleMap
-)((props) => (
+)(props => (
   <GoogleMap
     defaultZoom={16}
     defaultCenter={{ lat: props.lat, lng: props.lng }}
   >
-    {props.showMarker && <Marker position={{ lat: props.lat, lng: props.lng }} />}
+    {props.showMarker && (
+      <Marker position={{ lat: props.lat, lng: props.lng }} />
+    )}
     {props.render && props.render(props)}
   </GoogleMap>
 ));

@@ -10,10 +10,10 @@ export const data = [
       longitude: 106.8209883,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.7'
+      address: 'Jl. Guru Mughni No.7',
     },
     rating: 5,
-    cuisineType: 'Chinese'
+    cuisineType: 'Chinese',
   },
   {
     id: 2,
@@ -25,10 +25,10 @@ export const data = [
       longitude: 106.8213853,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.12'
+      address: 'Jl. Guru Mughni No.12',
     },
     rating: 5,
-    cuisineType: 'Western'
+    cuisineType: 'Western',
   },
   {
     id: 3,
@@ -40,10 +40,10 @@ export const data = [
       longitude: 106.8101853,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.3'
+      address: 'Jl. Guru Mughni No.3',
     },
     rating: 4.2,
-    cuisineType: 'Western'
+    cuisineType: 'Western',
   },
   {
     id: 4,
@@ -55,10 +55,10 @@ export const data = [
       longitude: 106.8301853,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.12'
+      address: 'Jl. Guru Mughni No.12',
     },
     rating: 5,
-    cuisineType: 'Western'
+    cuisineType: 'Western',
   },
   {
     id: 5,
@@ -70,10 +70,10 @@ export const data = [
       longitude: 106.8203883,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.3'
+      address: 'Jl. Guru Mughni No.3',
     },
     rating: 4.2,
-    cuisineType: 'Japanese'
+    cuisineType: 'Japanese',
   },
   {
     id: 6,
@@ -85,10 +85,10 @@ export const data = [
       longitude: 106.8300996,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.12'
+      address: 'Jl. Guru Mughni No.12',
     },
     rating: 5,
-    cuisineType: 'Chinese'
+    cuisineType: 'Chinese',
   },
   {
     id: 7,
@@ -100,10 +100,10 @@ export const data = [
       longitude: 106.8102653,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.3'
+      address: 'Jl. Guru Mughni No.3',
     },
     rating: 4.2,
-    cuisineType: 'Western'
+    cuisineType: 'Western',
   },
   {
     id: 8,
@@ -115,10 +115,10 @@ export const data = [
       longitude: 106.8072653,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.12'
+      address: 'Jl. Guru Mughni No.12',
     },
     rating: 5,
-    cuisineType: 'Western'
+    cuisineType: 'Western',
   },
   {
     id: 9,
@@ -130,10 +130,10 @@ export const data = [
       longitude: 106.8071653,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.3'
+      address: 'Jl. Guru Mughni No.3',
     },
     rating: 4.2,
-    cuisineType: 'Western'
+    cuisineType: 'Western',
   },
   {
     id: 10,
@@ -145,10 +145,10 @@ export const data = [
       longitude: 106.8079653,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.12'
+      address: 'Jl. Guru Mughni No.12',
     },
     rating: 5,
-    cuisineType: 'Western'
+    cuisineType: 'Western',
   },
   {
     id: 11,
@@ -160,9 +160,9 @@ export const data = [
       longitude: 106.8070953,
       city: 'Jakarta',
       countryId: 1,
-      address: 'Jl. Guru Mughni No.3'
+      address: 'Jl. Guru Mughni No.3',
     },
     rating: 4.2,
-    cuisineType: 'Western'
-  }
+    cuisineType: 'Western',
+  },
 ];

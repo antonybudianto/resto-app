@@ -15,16 +15,16 @@ class LandingPage extends Component {
     lng: 0,
     allowGetLocation: true,
     dataReady: false,
-    posReady: false
+    posReady: false,
   };
 
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.renderMap = this.renderMap.bind(this);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (!geoSupport) {
       /**
        * If geo isn't supported, we can still use 3rd party API to get the coords (e.g. https://ip-api.io/)
@@ -34,79 +34,83 @@ class LandingPage extends Component {
        **/
       this.setState({
         dataReady: true,
-        data
+        data,
       });
     } else {
-      navigator.geolocation.getCurrentPosition(pos => {
-        const coords = pos.coords;
-        this.setState({
-          geoSupport: true,
-          lat: coords.latitude,
-          lng: coords.longitude,
-          posReady: true,
-          dataReady: true,
-          data
-        });
-      }, () => {
-        this.setState({
-          dataReady: true,
-          data,
-          allowGetLocation: false
-        });
-      }, {
-        maximumAge: 60000
-      });
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          const coords = pos.coords;
+          this.setState({
+            geoSupport: true,
+            lat: coords.latitude,
+            lng: coords.longitude,
+            posReady: true,
+            dataReady: true,
+            data,
+          });
+        },
+        () => {
+          this.setState({
+            dataReady: true,
+            data,
+            allowGetLocation: false,
+          });
+        },
+        {
+          maximumAge: 60000,
+        }
+      );
     }
   }
 
-  renderMap () {
+  renderMap() {
     if (this.state.posReady) {
       return (
         <div>
           <RestaurantMapView
             data={this.state.data}
-            lat={this.state.lat} lng={this.state.lng} showMarker />
+            lat={this.state.lat}
+            lng={this.state.lng}
+            showMarker
+          />
         </div>
       );
     } else {
       return (
         <div className="mb-5 py-5 bg-dark text-light text-center">
-          <i className="fa fa-spin fa-spinner" /> Looking your nearby restaurant, just some seconds!...
+          <i className="fa fa-spin fa-spinner" /> Looking your nearby
+          restaurant, just some seconds!...
         </div>
       );
     }
   }
 
-  render () {
+  render() {
     return (
       <main role="main">
         <section className="jumbotron text-center">
           <div className="container">
             <h1 className="jumbotron-heading">RestoHub</h1>
-            <p className="lead text-muted">Book your nearest restaurant instantly</p>
+            <p className="lead text-muted">
+              Book your nearest restaurant instantly
+            </p>
           </div>
         </section>
         <div className="row">
-          {
-            !this.state.allowGetLocation ? (
-              <div className="col-md-12 mb-5 py-5 bg-dark text-light text-center">
-                We can find your nearest restaurants around you if you enable the location service
-              </div>
-            ) : (
-              <div className="col-md-12">
-                {geoSupport && this.renderMap()}
-              </div>
-            )
-          }
-          {
-            this.state.dataReady && (
-              <div className="col-md-12">
-                <RestaurantListSection data={this.state.data} />
-              </div>
-            )
-          }
+          {!this.state.allowGetLocation ? (
+            <div className="col-md-12 mb-5 py-5 bg-dark text-light text-center">
+              We can find your nearest restaurants around you if you enable the
+              location service
+            </div>
+          ) : (
+            <div className="col-md-12">{geoSupport && this.renderMap()}</div>
+          )}
+          {this.state.dataReady && (
+            <div className="col-md-12">
+              <RestaurantListSection data={this.state.data} />
+            </div>
+          )}
         </div>
-
       </main>
     );
   }
