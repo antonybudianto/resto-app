@@ -63,6 +63,7 @@ top = get the top 11 restaurants (need 1 for the top 1), ordered by rating
 Send the credentials with cookie
 
 // Request payload
+// Content-type JSON
 {
   peopleCount: 2,
   date: 1112232323,

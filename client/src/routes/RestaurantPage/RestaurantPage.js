@@ -37,6 +37,9 @@ class RestaurantPage extends Component {
     fetch('/api/restaurants/book', {
       method: 'POST',
       credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data),
     })
       .then(response => {
