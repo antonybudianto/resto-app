@@ -33,7 +33,27 @@ class RestaurantPage extends Component {
       date: this.state.date.valueOf(),
       restaurantId: resto.id,
     };
-    console.log(data);
+
+    fetch('/api/restaurants/book', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify(data),
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then(result => {
+        // Handle success
+        console.log('Success booking', result);
+      })
+      .catch(err => {
+        // Handle error booking
+        console.log('Failed to book', err);
+      });
   }
 
   handlePeopleCountChange(e) {
