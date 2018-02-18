@@ -2,7 +2,7 @@
 export const data = [
   {
     id: 1,
-    imgUrl: './img/resto/1.jpg',
+    imgUrl: '/img/resto/1.jpg',
     name: 'Duck King',
     slug: 'duck-king',
     location: {
@@ -17,7 +17,7 @@ export const data = [
   },
   {
     id: 2,
-    imgUrl: './img/resto/2.jpg',
+    imgUrl: '/img/resto/2.jpg',
     name: 'Holycow',
     slug: 'holycow',
     location: {
@@ -32,7 +32,7 @@ export const data = [
   },
   {
     id: 3,
-    imgUrl: './img/resto/3.jpg',
+    imgUrl: '/img/resto/3.jpg',
     name: 'KFC',
     slug: 'kfc',
     location: {
@@ -47,7 +47,7 @@ export const data = [
   },
   {
     id: 4,
-    imgUrl: './img/resto/4.jpg',
+    imgUrl: '/img/resto/4.jpg',
     name: 'Burger King',
     slug: 'burger-king',
     location: {
@@ -62,7 +62,7 @@ export const data = [
   },
   {
     id: 5,
-    imgUrl: './img/resto/5.jpg',
+    imgUrl: '/img/resto/5.jpg',
     name: 'Yoshinoya',
     slug: 'yoshinoya',
     location: {
@@ -77,7 +77,7 @@ export const data = [
   },
   {
     id: 6,
-    imgUrl: './img/resto/6.jpg',
+    imgUrl: '/img/resto/6.jpg',
     name: 'Loving Hut',
     slug: 'loving-hut',
     location: {
@@ -92,7 +92,7 @@ export const data = [
   },
   {
     id: 7,
-    imgUrl: './img/resto/7.jpg',
+    imgUrl: '/img/resto/7.jpg',
     name: 'La Brasserie Restaurant',
     slug: 'la-brasserie',
     location: {
@@ -107,7 +107,7 @@ export const data = [
   },
   {
     id: 8,
-    imgUrl: './img/resto/8.jpg',
+    imgUrl: '/img/resto/8.jpg',
     name: 'SATOO',
     slug: 'satoo',
     location: {
@@ -122,7 +122,7 @@ export const data = [
   },
   {
     id: 9,
-    imgUrl: './img/resto/9.jpg',
+    imgUrl: '/img/resto/9.jpg',
     name: 'Ninety Nine',
     slug: 'ninety-nine',
     location: {
@@ -137,7 +137,7 @@ export const data = [
   },
   {
     id: 10,
-    imgUrl: './img/resto/10.jpg',
+    imgUrl: '/img/resto/10.jpg',
     name: 'Skye',
     slug: 'skye',
     location: {
@@ -152,7 +152,7 @@ export const data = [
   },
   {
     id: 11,
-    imgUrl: './img/resto/11.jpg',
+    imgUrl: '/img/resto/11.jpg',
     name: 'Meradelima',
     slug: 'meradelima',
     location: {

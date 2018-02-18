@@ -65,7 +65,7 @@ class LandingPage extends Component {
         <div>
           <RestaurantMapView
             data={this.state.data}
-            lat={this.state.lat} lng={this.state.lng} isMarkerShown />
+            lat={this.state.lat} lng={this.state.lng} showMarker />
         </div>
       );
     } else {

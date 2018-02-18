@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import { range } from 'lodash';
 import moment from 'moment';
 
+import MapView from '../../components/MapView';
 import { data } from '../../data/restaurantList';
 
 const MIN_PEOPLE = 2;
@@ -65,9 +66,14 @@ class RestaurantPage extends Component {
     return (
       <div className="container mt-3">
         <div className="row">
-          <div className="col-md-5 mt-3">
+          <div className="col-md-2 mt-3">
+            <img class="img-fluid img-thumbnail" src={resto.imgUrl} alt={resto.name}/>
+          </div>
+          <div className="col-md-3 mt-3">
             <h1>{resto.name}</h1>
             <div>{resto.location.address}</div>
+            <div>{resto.location.city}</div>
+            <div>{resto.cuisineType} cuisine</div>
             <div>Rating: {resto.rating}</div>
           </div>
           <div className="col-md-7 mt-3 d-flex justify-content-around">
@@ -98,6 +104,13 @@ class RestaurantPage extends Component {
               <button type="submit"
                 className="btn btn-primary ml-2 mt-1">Book now</button>
             </form>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12 mt-5">
+            <h4>Map</h4>
+            <MapView lat={resto.location.latitude}
+              lng={resto.location.longitude} showMarker />
           </div>
         </div>
       </div>
