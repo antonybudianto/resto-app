@@ -49,6 +49,10 @@ footer p {
   .landing-card-img-main {
     width: 100%;
   }
+
+  .landing-card-img {
+    height: auto;
+  }
 }
 
 
