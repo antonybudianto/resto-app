@@ -14,18 +14,18 @@ top = get the top 11 restaurants (need 1 for the top 1), ordered by rating
 {
   data: [
     {
-      id: '1',
+      id: 1,
       name: 'Holycow',
       slug: 'holycow',
+      cuisineId: 1,
       location: {
         latitude: -6.1744,
         longitude: 102.8294,
-        city: 'Jakarta',
         countryId: 1,
         address: 'Jl. Guru Mughni No.12'
       },
       rating: 5,
-      cuisineType: 'Western'
+      distance: 10
     }
   ]
 }
@@ -39,18 +39,18 @@ top = get the top 11 restaurants (need 1 for the top 1), ordered by rating
 // HTTP 200
 {
   data: {
-    id: '1',
+    id: 1,
     name: 'Holycow',
     slug: 'holycow',
+    cuisineId: 1,
     location: {
       latitude: -6.1744,
       longitude: 102.8294,
-      city: 'Jakarta',
       countryId: 1,
       address: 'Jl. Guru Mughni No.12'
     },
     rating: 5,
-    cuisineType: 'Western'
+    distance: 10
   }
 }
 ```
