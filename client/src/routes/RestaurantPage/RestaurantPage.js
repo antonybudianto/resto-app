@@ -97,8 +97,6 @@ class RestaurantPage extends Component {
           <div className="col-md-3 mt-3">
             <h1>{resto.name}</h1>
             <div>{resto.location.address}</div>
-            <div>{resto.location.city}</div>
-            <div>{resto.cuisineType} cuisine</div>
             <div>Rating: {resto.rating}</div>
           </div>
           <div className="col-md-7 mt-3 d-flex justify-content-around">
