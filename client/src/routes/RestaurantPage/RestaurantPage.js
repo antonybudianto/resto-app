@@ -6,6 +6,10 @@ import moment from 'moment';
 import MapView from '../../components/MapView';
 import { data } from '../../data/restaurantList';
 
+// TODO: both country and cuisine list are mock, will use API
+import { countryList } from '../../data/countryList';
+import { cuisineList } from '../../data/cuisineList'
+
 const MIN_PEOPLE = 2;
 const MAX_PEOPLE = 10;
 const TOTAL_PEOPLE_LIST = range(MIN_PEOPLE, MAX_PEOPLE + 1);
@@ -75,6 +79,9 @@ class RestaurantPage extends Component {
     // TODO: should do fetch restaurant by slug
     const slug = this.props.match.params.slug;
     const resto = data.find(restaurant => restaurant.slug === slug);
+    const country = countryList.find(c => c.id === resto.location.countryId)
+    const cuisine = cuisineList.find(c => c.id === resto.cuisineId)
+
     if (!resto) {
       return (
         <div className="container mt-3">
@@ -97,6 +104,8 @@ class RestaurantPage extends Component {
           <div className="col-md-3 mt-3">
             <h1>{resto.name}</h1>
             <div>{resto.location.address}</div>
+            <div>{country.name}</div>
+            <div>Cuisine: {cuisine.name}</div>
             <div>Rating: {resto.rating}</div>
           </div>
           <div className="col-md-7 mt-3 d-flex justify-content-around">

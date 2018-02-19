@@ -1,5 +1,37 @@
 # RestoHub API Design
 
+### Get all resto cuisines
+```
+**GET** /api/cuisines
+
+// Response
+// HTTP 200
+{
+  data: [
+    {
+      id: 1,
+      name: "Chinese"
+    }
+  ]
+}
+```
+
+### Get all resto countries
+```
+**GET** /api/countries
+
+// Response
+// HTTP 200
+{
+  data: [
+    {
+      id: 1,
+      name: "Indonesia"
+    }
+  ]
+}
+```
+
 ### Get all nearest restaurant
 ```
 **GET** /api/restaurants?lat=x&lon=y&top=11
