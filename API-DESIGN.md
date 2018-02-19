@@ -66,7 +66,7 @@ Send the credentials with cookie
 // Content-type JSON
 {
   peopleCount: 2,
-  date: 1112232323,
+  date: "2018-01-14 07:00:00",
   restaurantId: 1
 }
 
@@ -74,8 +74,8 @@ Send the credentials with cookie
 // HTTP 201
 {
   data: {
-    bookingId: 1,
-    date: 1112232323,
+    id: 1,
+    date: "2018-01-14 07:00:00",
     peopleCount: 2,
     restaurantId: 1
   }

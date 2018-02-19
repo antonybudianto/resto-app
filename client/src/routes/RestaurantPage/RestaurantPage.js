@@ -30,7 +30,7 @@ class RestaurantPage extends Component {
     // TODO: do POST fetch to API server with following request body
     const data = {
       peopleCount: this.state.peopleCount,
-      date: this.state.date.valueOf(),
+      date: this.state.date.format('YYYY-MM-DD HH:mm:ss'),
       restaurantId: resto.id,
     };
 
