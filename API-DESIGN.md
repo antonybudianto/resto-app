@@ -89,7 +89,7 @@ top = get the top 11 restaurants (need 1 for the top 1), ordered by rating
 
 ### Book a table
 ```
-**POST** /api/restaurants/book
+**POST** /api/books
 
 // Header
 Send the credentials with cookie
