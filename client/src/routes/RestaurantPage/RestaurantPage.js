@@ -38,7 +38,7 @@ class RestaurantPage extends Component {
       restaurantId: resto.id,
     };
 
-    fetch('/api/restaurants/book', {
+    fetch('/api/books', {
       method: 'POST',
       credentials: 'include',
       headers: {
