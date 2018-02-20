@@ -79,18 +79,22 @@ class RestaurantPage extends Component {
     // TODO: should do fetch restaurant by slug
     const slug = this.props.match.params.slug;
     const resto = data.find(restaurant => restaurant.slug === slug);
-    const country = countryList.find(c => c.id === resto.location.countryId)
-    const cuisine = cuisineList.find(c => c.id === resto.cuisineId)
 
     if (!resto) {
       return (
         <div className="container mt-3">
           <div className="row">
-            <div className="col-md-12">Restaurant is not found.</div>
+            <div className="col-md-12">
+              <h3>Restaurant is not found.</h3>
+            </div>
           </div>
         </div>
       );
     }
+
+    const country = countryList.find(c => c.id === resto.location.countryId)
+    const cuisine = cuisineList.find(c => c.id === resto.cuisineId)
+
     return (
       <div className="container mt-3">
         <div className="row">
